@@ -14,6 +14,8 @@
   <img alt="Chrome Manifest V3" src="https://img.shields.io/badge/Chrome-Manifest%20V3-4285F4?logo=googlechrome&logoColor=white">
   <img alt="No external requests" src="https://img.shields.io/badge/privacy-100%25%20local-success">
   <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-blue">
+  <a href="https://github.com/ProAdmin007/linkedin-saved-posts-exporter/actions/workflows/security.yml"><img alt="Security scan" src="https://github.com/ProAdmin007/linkedin-saved-posts-exporter/actions/workflows/security.yml/badge.svg"></a>
+  <a href="sbom.cdx.json"><img alt="SBOM: CycloneDX" src="https://img.shields.io/badge/SBOM-CycloneDX%201.6-6f42c1"></a>
 </p>
 
 <p align="center">
@@ -119,6 +121,15 @@ Files are saved as `linkedin-saved-posts-YYYY-MM-DD.csv` / `.json`.
 - **Minimal permissions:** only `activeTab` and `scripting`. No background service worker, no `cookies`, no host permissions.
 - **No private APIs.** It only reads the page you already have open (DOM); it does not call LinkedIn's GraphQL/Voyager endpoints.
 - **Readable source.** All logic lives in [`export.js`](export.js) (~200 lines) — audit it yourself.
+
+### SBOM & security scanning
+
+- **SBOM:** a [CycloneDX 1.6](https://cyclonedx.org/) Software Bill of Materials is included as [`sbom.cdx.json`](sbom.cdx.json), with SHA-256 hashes of every shipped file. The extension has **zero third-party dependencies**. Regenerate it with `node scripts/generate-sbom.mjs`.
+- **Automated security scans** run on every push, pull request and weekly via [GitHub Actions](.github/workflows/security.yml):
+  - **CodeQL** static code analysis (`security-extended`)
+  - **Grype** vulnerability scan of the SBOM
+  - **Privacy check** ([`scripts/security-check.mjs`](scripts/security-check.mjs)) that fails the build if the extension ever requests extra permissions, makes network calls, uses `eval` or loads remote code
+- Found a vulnerability? See [SECURITY.md](SECURITY.md) to report it privately.
 
 ## ⚠️ Limitations
 
