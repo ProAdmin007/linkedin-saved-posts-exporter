@@ -1,0 +1,151 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "version": 1,
+  "metadata": {
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "generate-sbom.mjs",
+          "version": "1.0.0"
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "bom-ref": "pkg:github/ProAdmin007/linkedin-saved-posts-exporter@1.5.0",
+      "name": "linkedin-saved-posts-exporter",
+      "version": "1.5.0",
+      "description": "Export your saved LinkedIn posts to CSV or JSON locally, with resumable scanning, a configurable limit and quality checks.",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:github/ProAdmin007/linkedin-saved-posts-exporter@1.5.0",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/ProAdmin007/linkedin-saved-posts-exporter"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/ProAdmin007/linkedin-saved-posts-exporter/issues"
+        }
+      ],
+      "properties": [
+        {
+          "name": "chrome:manifest_version",
+          "value": "3"
+        },
+        {
+          "name": "chrome:permissions",
+          "value": "activeTab,scripting"
+        },
+        {
+          "name": "chrome:host_permissions",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "type": "file",
+      "bom-ref": "file:manifest.json",
+      "name": "manifest.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "a37f2b26962b3304fd3faeff8c044e454d75d42a2f8eed20551838dba645f1af"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "file:popup.html",
+      "name": "popup.html",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "8130e3efbf2e97028edb23ecd6cca9f22ceb556fa7d58e1ecd2912a45c9b52cf"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "file:popup.js",
+      "name": "popup.js",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "6c8506da665bfab8acfab8f17daff4dc8ba3e19842e2414663ef5b38075257ec"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "file:export.js",
+      "name": "export.js",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2919b656147f9a5ca1fb7fc0200901d79886f76dcf1eb36e543ddd938d7cce2a"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "file:icons/icon16.png",
+      "name": "icons/icon16.png",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "9fcc23f59340cce996ba002e535be337b993fb6502f431c76e949cffcdd49e31"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "file:icons/icon32.png",
+      "name": "icons/icon32.png",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "87e2c6b8788b3c448c0dcbf95c73702ffb20d5799a8559d3e21161ffd7936157"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "file:icons/icon48.png",
+      "name": "icons/icon48.png",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "96b1f909941b89f4c263f7dfafd4d3512e079f9d3b12afaa721d076a82a7b29b"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "file:icons/icon128.png",
+      "name": "icons/icon128.png",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "71b4e2637dc154ae356b9bc272f8a7c923a977f2c29adb722b48324326af6abc"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pkg:github/ProAdmin007/linkedin-saved-posts-exporter@1.5.0",
+      "dependsOn": []
+    }
+  ]
+}
