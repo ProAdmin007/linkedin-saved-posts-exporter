@@ -16,6 +16,7 @@
   <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-blue">
   <a href="https://github.com/ProAdmin007/linkedin-saved-posts-exporter/actions/workflows/security.yml"><img alt="Security scan" src="https://github.com/ProAdmin007/linkedin-saved-posts-exporter/actions/workflows/security.yml/badge.svg"></a>
   <a href="sbom.cdx.json"><img alt="SBOM: CycloneDX" src="https://img.shields.io/badge/SBOM-CycloneDX%201.6-6f42c1"></a>
+  <a href="https://ko-fi.com/proadmin007"><img alt="Buy me a coffee on Ko-fi" src="https://img.shields.io/badge/Buy%20me%20a%20coffee-Ko--fi-FF5E5B?logo=ko-fi&logoColor=white"></a>
 </p>
 
 <p align="center">
@@ -170,6 +171,12 @@ Scroll manually a bit, then click *Diagnostics* in the panel. Please [open an is
 
 **1.4.0**
 - Resumable collection, configurable post limit and quality overview.
+
+## ☕ Support
+
+Does this extension save you time? You can support further development by buying me a coffee:
+
+<a href="https://ko-fi.com/proadmin007"><img alt="Buy me a coffee on Ko-fi" src="https://ko-fi.com/img/githubbutton_sm.svg"></a>
 
 ## 🤝 Contributing
 
