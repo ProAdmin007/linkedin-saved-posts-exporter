@@ -56,7 +56,7 @@ jobs:
         run: node scripts/generate-sbom.mjs --check
       - name: Scan SBOM for known vulnerabilities (Grype)
         id: grype
-        uses: anchore/scan-action@v6
+        uses: anchore/scan-action@v7
         with:
           sbom: sbom.cdx.json
           fail-build: true
