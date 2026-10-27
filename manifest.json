@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "LinkedIn Saved Posts Exporter (Local)",
-  "version": "1.4.1",
-  "description": "Exporteer opgeslagen LinkedIn-berichten lokaal met hervatbare scan, instelbare limiet en kwaliteitscontrole.",
+  "version": "1.5.0",
+  "description": "Export your saved LinkedIn posts to CSV or JSON locally, with resumable scanning, a configurable limit and quality checks.",
   "permissions": [
     "activeTab",
     "scripting"

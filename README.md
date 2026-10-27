@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <img alt="Version" src="https://img.shields.io/badge/version-1.4.1-2ad4ae">
+  <img alt="Version" src="https://img.shields.io/badge/version-1.5.0-2ad4ae">
   <img alt="Chrome Manifest V3" src="https://img.shields.io/badge/Chrome-Manifest%20V3-4285F4?logo=googlechrome&logoColor=white">
   <img alt="No external requests" src="https://img.shields.io/badge/privacy-100%25%20local-success">
   <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-blue">
@@ -52,10 +52,10 @@ Saved posts often contain ideas, tools and to-dos you never get back to. The **J
 Here is a JSON export of my saved LinkedIn posts. Group them by theme and turn
 each actionable idea into a card for my Kanban board with: title, short
 description, label/theme, priority (high/medium/low) and the original post link
-(bericht_url). Return the result as a table / CSV I can import into Trello.
+(post_url). Return the result as a table / CSV I can import into Trello.
 ```
 
-Because each post includes its `bericht_url`, every card links straight back to the original LinkedIn post.
+Because each post includes its `post_url`, every card links straight back to the original LinkedIn post.
 
 ## ✨ Features
 
@@ -85,15 +85,15 @@ Works in Google Chrome and other Chromium-based browsers such as **Microsoft Edg
 ## 🚀 Usage
 
 1. Go to **[linkedin.com/my-items/saved-posts/](https://www.linkedin.com/my-items/saved-posts/)** while logged in.
-2. Click the extension icon → **Open exportpaneel** (open export panel).
-3. Set the **maximum number of posts** and click **Start verzamelen** (start collecting).
-4. When finished, click **Exporteer CSV** or **Exporteer JSON**.
+2. Click the extension icon → **Open export panel**.
+3. Set the **maximum number of posts** and click **Start collecting**.
+4. When finished, click **Export CSV** or **Export JSON**.
 
-> 💡 **Tip:** Try 10–20 posts first. Reaching the limit does **not** mean all saved posts were found — raise the maximum and click **Verder verzamelen** (continue collecting).
+> 💡 **Tip:** Try 10–20 posts first. Reaching the limit does **not** mean all saved posts were found — raise the maximum and click **Continue collecting**.
 
 > ⚠️ Closing the panel discards the collected (unexported) posts. Export first.
 
-The panel interface is currently in Dutch; the export works for LinkedIn in both English and Dutch.
+The interface is in English; the export works with LinkedIn in both English and Dutch.
 
 ## 📄 Export format
 
@@ -101,17 +101,17 @@ Each exported post contains the following fields:
 
 | Field | Description |
 |---|---|
-| `auteur` | Author name (person or company) |
-| `profiel_url` | Author profile URL |
-| `tekst` | Full post text |
-| `bericht_url` | Direct link to the post |
-| `afbeelding_url` | Image URL (if any) |
-| `datum_weergave` | Relative date as shown by LinkedIn (e.g. `3w`, `2mo`) |
+| `author` | Author name (person or company) |
+| `profile_url` | Author profile URL |
+| `text` | Full post text |
+| `post_url` | Direct link to the post |
+| `image_url` | Image URL (if any) |
+| `date_display` | Relative date as shown by LinkedIn (e.g. `3w`, `2mo`) |
 | `urn` | LinkedIn activity / share URN |
-| `tekst_mogelijk_ingekort` | `true` if the text may be truncated |
-| `export_tijd` | Export timestamp (ISO 8601) |
+| `text_possibly_truncated` | `true` if the text may be truncated |
+| `exported_at` | Export timestamp (ISO 8601) |
 
-Files are saved as `linkedin-opgeslagen-YYYY-MM-DD.csv` / `.json`.
+Files are saved as `linkedin-saved-posts-YYYY-MM-DD.csv` / `.json`.
 
 ## 🔒 Privacy & security
 
@@ -122,7 +122,7 @@ Files are saved as `linkedin-opgeslagen-YYYY-MM-DD.csv` / `.json`.
 
 ## ⚠️ Limitations
 
-> 🐞 **Something stopped working?** LinkedIn regularly changes its website, which can break the export. Please [**report it as an issue**](https://github.com/ProAdmin007/linkedin-saved-posts-exporter/issues/new) with a short description and, if possible, the output of the *Diagnose* button (remove personal information first).
+> 🐞 **Something stopped working?** LinkedIn regularly changes its website, which can break the export. Please [**report it as an issue**](https://github.com/ProAdmin007/linkedin-saved-posts-exporter/issues/new) with a short description and, if possible, the output of the *Diagnostics* button (remove personal information first).
 
 - Reads only the HTML of the current page; LinkedIn may change its markup at any time.
 - Publication date and post link can occasionally be missing. *Possibly truncated* is a heuristic.
@@ -144,9 +144,14 @@ No. Everything stays on your computer. The file is generated in your browser and
 Yes, any Chromium-based browser that supports Manifest V3 extensions.
 
 **It found 0 posts — what now?**
-Scroll manually a bit, then click *Diagnose* in the panel. Please [open an issue](https://github.com/ProAdmin007/linkedin-saved-posts-exporter/issues) with the diagnostic output (remove personal information first).
+Scroll manually a bit, then click *Diagnostics* in the panel. Please [open an issue](https://github.com/ProAdmin007/linkedin-saved-posts-exporter/issues) with the diagnostic output (remove personal information first).
 
 ## 🗒️ Changelog
+
+**1.5.0 — English interface**
+- Extension UI translated to English.
+- Export fields renamed to English (`author`, `text`, `post_url`, …) and files are now named `linkedin-saved-posts-YYYY-MM-DD`.
+- Still works with LinkedIn in both English and Dutch.
 
 **1.4.1 — metadata fix**
 - Author names are cleaned up with targeted labels for people and companies.
@@ -178,13 +183,14 @@ Met deze Chrome-extensie exporteer je je **opgeslagen LinkedIn-berichten** (bewa
 
 ### Gebruik
 1. Open [linkedin.com/my-items/saved-posts/](https://www.linkedin.com/my-items/saved-posts/).
-2. Klik op het extensie-icoon → **Open exportpaneel**.
-3. Kies het maximale aantal berichten (1–10.000, standaard 250) en klik op **Start verzamelen**.
-4. Is de limiet bereikt? Verhoog hem en klik op **Verder verzamelen**.
-5. Klik op **Exporteer CSV** of **Exporteer JSON**.
+2. Klik op het extensie-icoon → **Open export panel**.
+3. Kies het maximale aantal berichten (1–10.000, standaard 250) en klik op **Start collecting**.
+4. Is de limiet bereikt? Verhoog hem en klik op **Continue collecting**.
+5. Klik op **Export CSV** of **Export JSON**.
 
-- **Lange berichten uitklappen** opent automatisch 'meer weergeven'-knoppen.
-- **Nieuwe verzameling** wist (na bevestiging) alleen de verzamelde gegevens in het paneel.
+- De interface is in het Engels en werkt met LinkedIn in het Nederlands en Engels.
+- **Expand long posts** opent automatisch 'meer weergeven'-knoppen.
+- **New collection** wist (na bevestiging) alleen de verzamelde gegevens in het paneel.
 - Het paneel sluiten betekent dat niet-geëxporteerde gegevens verloren gaan — exporteer eerst.
 
 ### Tip: vul je Kanban-, Scrum- of Trellobord met AI
@@ -194,12 +200,12 @@ De **JSON-export** is handig om in een AI-tool (zoals Claude, ChatGPT, Gemini of
 Hier is een JSON-export van mijn opgeslagen LinkedIn-berichten. Groepeer ze per
 thema en maak van elk bruikbaar idee een kaart voor mijn Kanbanbord met: titel,
 korte omschrijving, label/thema, prioriteit (hoog/midden/laag) en de link naar
-het originele bericht (bericht_url). Geef het resultaat als tabel/CSV die ik in
+het originele bericht (post_url). Geef het resultaat als tabel/CSV die ik in
 Trello kan importeren.
 ```
 
 ### Werkt er iets niet meer?
-LinkedIn past regelmatig zijn website aan, waardoor de export kan stoppen met werken. [**Meld het als een issue**](https://github.com/ProAdmin007/linkedin-saved-posts-exporter/issues/new), met een korte omschrijving en indien mogelijk de uitvoer van de knop *Diagnose* (haal persoonlijke gegevens eerst weg).
+LinkedIn past regelmatig zijn website aan, waardoor de export kan stoppen met werken. [**Meld het als een issue**](https://github.com/ProAdmin007/linkedin-saved-posts-exporter/issues/new), met een korte omschrijving en indien mogelijk de uitvoer van de knop *Diagnostics* (haal persoonlijke gegevens eerst weg).
 
 ### Privacy
 Alleen de rechten `activeTab` en `scripting`. Geen achtergrondservice, geen cookies-permissie, geen externe server en geen aanroepen van private LinkedIn-API's.
