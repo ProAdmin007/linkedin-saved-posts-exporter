@@ -38,6 +38,24 @@ LinkedIn lets you **save posts** for later, but offers no way to **download, sea
 - 🔍 Search and filter your saved LinkedIn content
 - 💾 Back up your LinkedIn bookmarks before they disappear
 - 🤖 Feed your saved posts into your own analysis or AI tools
+- 📋 Turn saved posts into tasks on your **Kanban, Scrum or Trello board** (see below)
+
+## 🤖 Tip: from saved posts to a Kanban / Scrum / Trello board with AI
+
+Saved posts often contain ideas, tools and to-dos you never get back to. The **JSON export** is ideal to feed into an AI tool such as **Claude, ChatGPT, Gemini or Copilot** and turn it into actionable cards for your **Kanban board, Scrum board, Trello, Jira, Asana, Notion or Planner**.
+
+1. Export your saved posts as **JSON**.
+2. Upload the file to your AI tool of choice.
+3. Use a prompt like:
+
+```text
+Here is a JSON export of my saved LinkedIn posts. Group them by theme and turn
+each actionable idea into a card for my Kanban board with: title, short
+description, label/theme, priority (high/medium/low) and the original post link
+(bericht_url). Return the result as a table / CSV I can import into Trello.
+```
+
+Because each post includes its `bericht_url`, every card links straight back to the original LinkedIn post.
 
 ## ✨ Features
 
@@ -104,6 +122,8 @@ Files are saved as `linkedin-opgeslagen-YYYY-MM-DD.csv` / `.json`.
 
 ## ⚠️ Limitations
 
+> 🐞 **Something stopped working?** LinkedIn regularly changes its website, which can break the export. Please [**report it as an issue**](https://github.com/ProAdmin007/linkedin-saved-posts-exporter/issues/new) with a short description and, if possible, the output of the *Diagnose* button (remove personal information first).
+
 - Reads only the HTML of the current page; LinkedIn may change its markup at any time.
 - Publication date and post link can occasionally be missing. *Possibly truncated* is a heuristic.
 - The date is LinkedIn's relative label (e.g. `1w`), not an absolute date.
@@ -167,11 +187,25 @@ Met deze Chrome-extensie exporteer je je **opgeslagen LinkedIn-berichten** (bewa
 - **Nieuwe verzameling** wist (na bevestiging) alleen de verzamelde gegevens in het paneel.
 - Het paneel sluiten betekent dat niet-geëxporteerde gegevens verloren gaan — exporteer eerst.
 
+### Tip: vul je Kanban-, Scrum- of Trellobord met AI
+De **JSON-export** is handig om in een AI-tool (zoals Claude, ChatGPT, Gemini of Copilot) te voeren. Zo maak je van je opgeslagen berichten makkelijk kaarten voor je **Kanbanbord, Scrumbord of Trellobord** (of Jira, Asana, Notion, Planner). Bijvoorbeeld met deze prompt:
+
+```text
+Hier is een JSON-export van mijn opgeslagen LinkedIn-berichten. Groepeer ze per
+thema en maak van elk bruikbaar idee een kaart voor mijn Kanbanbord met: titel,
+korte omschrijving, label/thema, prioriteit (hoog/midden/laag) en de link naar
+het originele bericht (bericht_url). Geef het resultaat als tabel/CSV die ik in
+Trello kan importeren.
+```
+
+### Werkt er iets niet meer?
+LinkedIn past regelmatig zijn website aan, waardoor de export kan stoppen met werken. [**Meld het als een issue**](https://github.com/ProAdmin007/linkedin-saved-posts-exporter/issues/new), met een korte omschrijving en indien mogelijk de uitvoer van de knop *Diagnose* (haal persoonlijke gegevens eerst weg).
+
 ### Privacy
 Alleen de rechten `activeTab` en `scripting`. Geen achtergrondservice, geen cookies-permissie, geen externe server en geen aanroepen van private LinkedIn-API's.
 
 ---
 
-<sub>Keywords: LinkedIn saved posts export, export LinkedIn saved items, download LinkedIn bookmarks, LinkedIn saved posts to CSV, LinkedIn saved posts to Excel, LinkedIn saved posts JSON, backup LinkedIn saved posts, Chrome extension, LinkedIn opgeslagen berichten exporteren.</sub>
+<sub>Keywords: LinkedIn saved posts export, export LinkedIn saved items, download LinkedIn bookmarks, LinkedIn saved posts to CSV, LinkedIn saved posts to Excel, LinkedIn saved posts JSON, LinkedIn posts to Trello, Kanban board, Scrum board, AI, backup LinkedIn saved posts, Chrome extension, LinkedIn opgeslagen berichten exporteren.</sub>
 
 <sub>Not affiliated with, endorsed or sponsored by LinkedIn Corporation. LinkedIn is a trademark of LinkedIn Corporation.</sub>
